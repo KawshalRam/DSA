@@ -6,14 +6,14 @@ int powerofAandB(int a,int b){
     {
         ans=ans*a;
     }
-    cout<<"answer is "<<ans<<endl;
-    return 0;
+    return ans;
     }
 int main()
 {
     //pow(a,b)
     int a,b;
     cin>>a>>b;
-    powerofAandB(a,b);
+    int answer=powerofAandB(a,b);
+    cout<<answer;
     return 0;
 }
