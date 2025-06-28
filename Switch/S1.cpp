@@ -29,4 +29,14 @@ int main()
         break;
         default: cout<<"NO case satisfied"<<endl;
     }
+    switch(ch)
+    {
+        case '1': switch (num)
+        {
+            case 1: cout<<"Value of num is "<<num<<endl;
+            break;
+        }
+        break;
+        default:cout<<"default case"<<endl;
+    }
 }
