@@ -8,6 +8,7 @@ int LinearSearch(int arr[],int size,int n)
     {
         if (arr[i]==n)
         c=1;
+        break;
     }
     if (c==1)
     {
