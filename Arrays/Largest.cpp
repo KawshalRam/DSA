@@ -3,7 +3,7 @@ using namespace std;
 
 int LargestSmallest(int n)
 {
-    int a[n];
+    int a[100];
     cout<<"enter the integers"<<endl;
     for(int i=0;i<n;i++)
     {
@@ -13,10 +13,10 @@ int LargestSmallest(int n)
     int min = a[0];
     for(int i=0;i<n;i++)
     {
-        if(a[i]>=max)
+        if(a[i]>=max) // or max=max(max,a[i]);
         max=a[i];
         if(a[i]<=min)
-        min=a[i];
+        min=a[i]; //or min=min(min,a[i]);
     }
     cout<<max<<endl;
     cout<<min<<endl;
@@ -37,3 +37,4 @@ int main()
 // to initialize with a different value  than 0 use std::fill(arr,arr[n],5);
 // 2nd index means the element at that same index
 // 2nd element means the element at 1st index
+// Using a variable as array size is a bad practice
