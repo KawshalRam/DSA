@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void Reverse(int arr[],int size)
+voidk Reverse(int arr[],int size)
 {
     cout<<"enter the array"<<endl;
     for (int i=0;i<size;i++)
