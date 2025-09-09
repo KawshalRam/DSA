@@ -75,12 +75,7 @@ void Delete(Node* &head,int pos)
     {
         temp=temp->next;
         cnt++;
-    }
-
-    if(temp->next=NULL)
-    {
-        
-    }
+    } 
     Node* curr=temp->next;
     temp->next= curr->next;
     curr->next=NULL;
