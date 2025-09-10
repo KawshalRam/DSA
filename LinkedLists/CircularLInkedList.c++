@@ -67,6 +67,27 @@ void insertNode(Node*& tail, int element, int data) {
     }
 }
 
+void DeleteNode(Node* &tail,int value)
+{
+    if(tail==NULL)
+    cout<<"empty List"<<endl;
+    else
+    {
+        Node * prev=tail;
+        Node * curr=tail->next;
+
+        while(curr->data!=value)
+        {
+            prev=curr;
+            curr=curr->next;
+        }
+
+        prev->next=curr->next;
+        curr->next=NULL;
+        delete curr;
+    }
+}
+
 int main() {
     Node* tail = NULL;
 
@@ -80,6 +101,9 @@ int main() {
     Print(tail);
 
     insertNode(tail, 12, 15); // after 12 → 12 15 13 14
+    Print(tail);
+
+    DeleteNode(tail,15);
     Print(tail);
 
     return 0;
