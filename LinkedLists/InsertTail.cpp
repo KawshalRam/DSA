@@ -5,10 +5,22 @@ class Node {
 public:
     int data;
     Node* next;
-
+    //constructor
     Node(int data) {
         this->data = data;
         this->next = NULL;
+    }
+
+    //destructor
+    ~Node()
+    {
+        int value=this->data;
+        //Memory Free
+        if(this->next !=NULL)
+        {
+            delete next;
+            this->next=NULL;
+        }
     }
 };
 
@@ -62,23 +74,28 @@ void InsertAtPosition( Node * &head,Node *&tail,int data,int pos)
 
 void Delete(Node* &head,int pos)
 {
-    int cnt=1;
+    
     if(pos==1)
     {
-        Node* curr=head;
+        Node* temp=head;
         head=head->next;
-        curr=NULL;
-        return;
+        delete temp;
     }
-    Node* temp = head;
-    while(cnt<pos-1 && temp->next!=NULL)
+    else
     {
-        temp=temp->next;
+    Node* curr = head;
+    Node* prev = NULL;
+    int cnt=1;
+    while(cnt<pos )
+    {
+        prev=curr;
+        curr=curr->next;
         cnt++;
     } 
-    Node* curr=temp->next;
-    temp->next= curr->next;
+    prev->next=curr->next;
     curr->next=NULL;
+    delete curr;
+    }
 }
 
 int main() {
@@ -104,7 +121,7 @@ int main() {
     InsertAtPosition(head, tail, 50, 10); 
     print(head);
 
-    Delete(head,2);
+    Delete(head,4);
     print(head);
     return 0;
 }
